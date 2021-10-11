@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const CreateTweet = ({ inputText, setInputText, tweets, setTweets }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
@@ -5,7 +7,7 @@ const CreateTweet = ({ inputText, setInputText, tweets, setTweets }) => {
 
   const submitTextHandler = (e) => {
     e.preventDefault();
-    setTweets([...tweets, inputText]);
+    setTweets([...tweets, { text: inputText, id: uuidv4() }]);
     setInputText("");
   };
   return (

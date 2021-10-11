@@ -15,7 +15,7 @@ function App() {
         tweets={tweets}
         setTweets={setTweets}
       />
-      <TweetFeed tweets={tweets} />
+      <TweetFeed tweets={tweets} setTweets={setTweets} />
     </div>
   );
 }

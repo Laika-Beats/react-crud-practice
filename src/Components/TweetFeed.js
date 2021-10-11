@@ -1,10 +1,16 @@
 import Tweet from "./Tweet";
 
-const TweetFeed = ({ tweets }) => {
+const TweetFeed = ({ tweets, setTweets }) => {
   return (
     <div>
       {tweets.map((tweet) => (
-        <Tweet tweet={tweet} />
+        <Tweet
+          tweets={tweets}
+          setTweets={setTweets}
+          tweet={tweet}
+          key={tweet.id}
+          id={tweet.id}
+        />
       ))}
     </div>
   );
