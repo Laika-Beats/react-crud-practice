@@ -1,16 +1,11 @@
-import { useState } from "react";
-
-const CreateTweet = () => {
-  const [inputText, setInputText] = useState("");
-  const [submitText, setSubmitText] = useState([]);
-
+const CreateTweet = ({ inputText, setInputText, tweets, setTweets }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };
 
   const submitTextHandler = (e) => {
     e.preventDefault();
-    setSubmitText([...submitText, inputText]);
+    setTweets([...tweets, inputText]);
     setInputText("");
   };
   return (

@@ -1,11 +1,11 @@
 import Tweet from "./Tweet";
 
-const TweetFeed = () => {
+const TweetFeed = ({ tweets }) => {
   return (
     <div>
-      <Tweet />
-      <Tweet />
-      <Tweet />
+      {tweets.map((tweet) => (
+        <Tweet tweet={tweet} />
+      ))}
     </div>
   );
 };
